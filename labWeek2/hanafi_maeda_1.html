@@ -1,0 +1,74 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<!--<link rel="stylesheet" type="text/css" href="design.css">
+	<!--<script src="d3.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	<style type="text/css">
+		header {
+		    background-color: navy;
+		    color:white;
+		    font-family: "Arial";
+		}
+
+		h1 {
+		    color: white;
+		    margin-left: 20px;
+		    font-family: "Arial";
+
+
+		}
+		body{
+		    font-family: "Arial";
+
+		}
+		#search{
+			background-color: navy;
+		    color:white;
+		    font-family: "Arial";
+
+		}
+		#amount{
+			font-weight: bold;
+		}
+	</style>
+
+	<title>Lab 2</title>
+	<header><h1>Country GDP vs Easy of business</h1></header>
+
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+		var countries = [
+			{ name: "Brazil", GDP: 1000 },
+		    { name: "Iraq", GDP: 890 },
+		    { name: "US", GDP: 300 },
+		    { name: "India", GDP: 500 }
+	    ]; 
+		
+
+		function search_button_click(){
+			var search_text = d3.select("#search_text").node().value;
+			var GDP = 0;
+
+			//Search through countries array
+			for(var i=0; i<countries.length; i++){
+				if(countries[i].name == search_text){
+					GDP = countries[i].GDP;
+					//Set interface GDP
+					d3.select("#amount").text("$"+GDP);
+					break;
+				}
+			}
+
+			console.log("search text: "+ search_text + " corresponding GDP:"+ GDP);
+		}
+
+	</script>
+
+ 		Search: <input type="text" id="search_text"> <input type="button" id="search" onclick="search_button_click()" value="Go" > <span class="GDP">GDP:</span><span id="amount">$11,000</span>
+ </body>
+</html>

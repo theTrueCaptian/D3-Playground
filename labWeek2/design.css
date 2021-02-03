@@ -1,0 +1,26 @@
+header {
+    background-color: navy;
+    color:white;
+    font-family: "Arial";
+}
+
+h1 {
+    color: white;
+    margin-left: 20px;
+    font-family: "Arial";
+
+
+}
+body{
+    font-family: "Arial";
+
+}
+#search{
+	background-color: navy;
+    color:white;
+    font-family: "Arial";
+
+}
+.amount{
+	font-weight: bold;
+}
